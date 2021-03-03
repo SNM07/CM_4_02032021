@@ -52,7 +52,9 @@
         </button>
       </div>
 
-      <div class="bground">
+      <div class="bground">              
+        <span class="popuptext" id="myPopup">Merci ! Votre réservation a été reçue.</span>
+
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
@@ -60,8 +62,7 @@
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
-            >
+              onsubmit="return validate();">
               <div
                 class="formData">
                 <label for="first">Prénom</label><br>
@@ -216,6 +217,7 @@
                 type="submit"
                 class="button"
                 value="C'est parti"
+                oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs.')" onchange="this.setCustomValidity('')"
               />
             </form>
           </div>
