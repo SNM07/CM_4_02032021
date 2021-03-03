@@ -13,7 +13,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 
 // Get the <span> element that closes the modal
-const modalClose = document.querySelectorAll(".close")[0];
+const modalClose = document.getElementById("close");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -36,6 +36,7 @@ window.onclick = function(event) {
 }
 
 function validate() {
+  e.preventDefault();
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
   //setTimeout(validate(), 8000);
