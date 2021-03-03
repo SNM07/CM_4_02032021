@@ -72,6 +72,7 @@
                   name="first"
                   minlength="2"
                   required
+                  oninvalid="this.setCustomValidity('Veuillez entrer 2 caractères ou plus pour le champ du prénom.')" onchange="this.setCustomValidity('')"
                 /><br>
               </div>
               <div
@@ -84,6 +85,7 @@
                   name="last"
                   minlength="2"
                   required
+                  oninvalid="this.setCustomValidity('Veuillez entrer 2 caractères ou plus pour le champ du nom.')" onchange="this.setCustomValidity('')"
                 /><br>
               </div>
               <div
@@ -95,6 +97,7 @@
                   id="email"
                   name="email"
                   required
+                  oninvalid="this.setCustomValidity('Vous devez entrer une adresse email valide.')" onchange="this.setCustomValidity('')"
                 /><br>
               </div>
               <div
@@ -106,12 +109,13 @@
                   id="birthdate"
                   name="birthdate"
                   required
+                  oninvalid="this.setCustomValidity('Vous devez entrer votre date de naissance.')" onchange="this.setCustomValidity('')"
                 /><br>
               </div>
               <div
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required oninvalid="this.setCustomValidity('Vous devez choisir une option.')" onchange="this.setCustomValidity('')"                >
               </div>
               <p class="text-label">Quelles villes ?</p>
               <div
@@ -193,8 +197,9 @@
                   id="checkbox1"
                   checked
                   required
+                  oninvalid="this.setCustomValidity('Vous devez vérifier que vous acceptez les termes et conditions.')" onchange="this.setCustomValidity('')"
                 />
-                <label class="checkbox2-label" for="checkbox1" required>
+                <label class="checkbox2-label" for="checkbox1" >
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
