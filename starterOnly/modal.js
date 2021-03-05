@@ -52,8 +52,9 @@ function validate() {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
   //setTimeout(validate(), 8000);
-  f(popup.classList.contains("show")); // Check if the popup is shown
-  setTimeout(() => popup.classList.remove("show"), 10000); // If yes hide it after 10000 milliseconds
+  if (popup.classList.contains("show")) {// Check if the popup is shown
+    setTimeout(() => popup.classList.remove("show"), 10000);
+  } // If yes hide it after 10000 milliseconds
   return false;
 }
 
