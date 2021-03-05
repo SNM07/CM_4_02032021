@@ -10,6 +10,14 @@
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
     />
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_puf8TmtfpdXTG2bY7o9Sk");
+   })();
+</script>
   </head>
   <body>
     <div class="topnav" id="myTopnav">
@@ -97,6 +105,7 @@
                   type="email"
                   id="email"
                   name="email"
+                  pattern=".+@.+\..+"
                   required
                   oninvalid="this.setCustomValidity('Vous devez entrer une adresse email valide.')" onchange="this.setCustomValidity('')"
                 /><br>
