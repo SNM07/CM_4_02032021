@@ -240,6 +240,7 @@ input[data-error]::after {
   margin-left: 36px;
   font-size: 12px;
   font-weight: normal;
+  cursor: pointer;
 }
 .checkbox-label .checkbox-icon,
 .checkbox2-label .checkbox-icon {
@@ -275,7 +276,7 @@ input[data-error]::after {
   opacity: 0;
   position: absolute;
   display: flex;
-  bottom: 0;
+  top: 50%;
   left: 10px;
 }
 .checkbox-input:checked + .checkbox-label .checkbox-icon::after,

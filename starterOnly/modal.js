@@ -35,6 +35,18 @@ window.onclick = function (event) {
   }
 };
 
+var checks = document.querySelectorAll(".checkbox-input");
+
+for (var i = 0; i < checks.length; i++)
+  checks[i].onclick = selectiveCheck;
+function selectiveCheck (event) {
+  var checkedChecks = document.querySelectorAll(".checkbox-input:checked");
+  var quantity = parseInt(document.getElementById("quantity").value);
+  if (checkedChecks.length >= quantity + 2)
+    return false;
+  /*setCustomValidity('Vous devez entrer votre date de naissance.');*/
+}
+
 function validate() {
   /* document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -53,7 +65,8 @@ function validate() {
   popup.classList.toggle("show");
   //setTimeout(validate(), 8000);
   if (popup.classList.contains("show")) {// Check if the popup is shown
-    setTimeout(() => popup.classList.remove("show"), 10000);
+    setTimeout(() => popup.classList.remove("show"), 4000);
+    setTimeout(() => modalbg.style.display = "none", 4000);
   } // If yes hide it after 10000 milliseconds
   return false;
 }
@@ -73,3 +86,15 @@ function validate() {
           });
   });
 } */
+
+/*var checks = document.querySelectorAll(".checkbox-input");
+
+for (var i = 0; i < checks.length; i++)
+  checks[i].onclick = selectiveCheck;
+function selectiveCheck (event) {
+  var checkedChecks = document.querySelectorAll(".checkbox-input:checked");
+  var quantity = parseInt(document.getElementById("quantity").value);
+  if (checkedChecks.length >= quantity + 2)
+    return false;
+  /*setCustomValidity('Vous devez entrer votre date de naissance.');
+}*/
