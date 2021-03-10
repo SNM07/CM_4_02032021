@@ -71,7 +71,7 @@ function validate() {
     NewYork: document.getElementById("location1").checked,
     SanFrancisco: document.getElementById("location2").checked,
     Seattle: document.getElementById("location3").checked,
-    Chicago: document.getElementById("location4").checked
+    Chicago: document.getElementById("location4").checked,
     Boston: document.getElementById("location5").checked,
     Portland: document.getElementById("location6").checked
 };
