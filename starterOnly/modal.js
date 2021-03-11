@@ -56,20 +56,13 @@ function validate() {
     email: document.getElementById("email").value,
     birthdate: document.getElementById("birthdate").value,
     quantity: document.getElementById("quantity").value,
-    NewYork: document.getElementById("location1").checked,
-    SanFrancisco: document.getElementById("location2").checked,
-    Seattle: document.getElementById("location3").checked,
-    Chicago: document.getElementById("location4").checked,
-    Boston: document.getElementById("location5").checked,
-    Portland: document.getElementById("location6").checked,
-    checkbox2: document.getElementById("checkbox2").checked,
-    textNewYork: "",
-    textSanFrancisco: "",
-    textSeattle: "",
-    textChicago: "",
-    textBoston: "",
-    textPortland: "",
-    textcheckbox2: "",
+    NewYork: document.getElementById("location1").checked ? 'OUI': 'NON',
+    SanFrancisco: document.getElementById("location2").checked ? 'OUI': 'NON',
+    Seattle: document.getElementById("location3").checked ? 'OUI': 'NON',
+    Chicago: document.getElementById("location4").checked ? 'OUI': 'NON',
+    Boston: document.getElementById("location5").checked ? 'OUI': 'NON',
+    Portland: document.getElementById("location6").checked ? 'OUI': 'NON',
+    checkbox2: document.getElementById("checkbox2").checked ? 'OUI': 'NON',
   };
 
   emailjs.send("service_fqmxk3h", "template_zhusj29", varsForm).then(
@@ -80,36 +73,6 @@ function validate() {
       console.log("FAILED...", error);
     }
   );
-
-  var textNewYork = "Non";
-  if (document.getElementById("location1").checked) {
-    textNewYork = "Oui";
-    console.log(textNewYork);
-  }
-  var textSanFrancisco = "Non";
-  if (document.getElementById("location2").checked) {
-    textSanFrancisco = "Oui";
-  }
-  var textSeattle = "Non";
-  if (document.getElementById("location3").checked) {
-    textSeattle = "Oui";
-  }
-  var textChicago = "Non";
-  if (document.getElementById("location4").checked) {
-    textChicago = "Oui";
-  }
-  var textBoston = "Non";
-  if (document.getElementById("location5").checked) {
-    textBoston = "Oui";
-  }
-  var textPortland = "Non";
-  if (document.getElementById("location6").checked) {
-    textPortland = "Oui";
-  }
-  var textcheckbox2 = "Non";
-  if (document.getElementById("checkbox2").checked) {
-    textcheckbox2 = "Oui";
-  }
 
   // Display and Close popup message and modal
   var popup = document.getElementById("myPopup");
