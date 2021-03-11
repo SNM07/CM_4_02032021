@@ -35,6 +35,8 @@ window.onclick = function (event) {
   }
 };
 
+/*
+// Prevent user from selecting more checkboxes than the input number selected
 var checks = document.querySelectorAll(".checkbox-input");
 
 for (var i = 0; i < checks.length; i++)
@@ -44,104 +46,80 @@ function selectiveCheck (event) {
   var quantity = parseInt(document.getElementById("quantity").value);
   if (checkedChecks.length >= quantity + 2)
     return false;
-  /*setCustomValidity('Vous devez entrer votre date de naissance.');*/
-}
+}*/
 
+// Send form with EmailJS
 function validate() {
-  /* document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    // generate a five digit number for the contact_number variable
-    this.contact_number.value = Math.random() * 100000 | 0;
-    // these IDs from the previous steps
-    emailjs.sendForm('contact_service', 'contact_form', this)
-        .then(function() {
-            console.log('SUCCESS!');
-        }, function(error) {
-            console.log('FAILED...', error);
-        });
-  }); 
-  e.preventDefault(e);*/
-
   const varsForm = {
-    first: document.getElementById("first"),
-    last: document.getElementById("last"),
-    email: document.getElementById("email"),
-    birthdate: document.getElementById("birthdate"),
-    quantity: document.getElementById("quantity"),
+    first: document.getElementById("first").value,
+    last: document.getElementById("last").value,
+    email: document.getElementById("email").value,
+    birthdate: document.getElementById("birthdate").value,
+    quantity: document.getElementById("quantity").value,
     NewYork: document.getElementById("location1").checked,
     SanFrancisco: document.getElementById("location2").checked,
     Seattle: document.getElementById("location3").checked,
     Chicago: document.getElementById("location4").checked,
     Boston: document.getElementById("location5").checked,
-    Portland: document.getElementById("location6").checked
-};
+    Portland: document.getElementById("location6").checked,
+    checkbox2: document.getElementById("checkbox2").checked,
+    textNewYork: "",
+    textSanFrancisco: "",
+    textSeattle: "",
+    textChicago: "",
+    textBoston: "",
+    textPortland: "",
+    textcheckbox2: "",
+  };
 
-emailjs.send('service_fqmxk3h', 'template_zhusj29', varsForm)
-    .then(function() {
-        console.log('SUCCESS!');
-    }, function(error) {
-        console.log('FAILED...', error);
-    });
+  emailjs.send("service_fqmxk3h", "template_zhusj29", varsForm).then(
+    function () {
+      console.log("SUCCESS!");
+    },
+    function (error) {
+      console.log("FAILED...", error);
+    }
+  );
 
-var textNewYork = 'Non';
+  var textNewYork = "Non";
   if (document.getElementById("location1").checked) {
-      textNewYork = 'Oui';
+    textNewYork = "Oui";
+    console.log(textNewYork);
   }
-var textSanFrancisco = 'Non';
+  var textSanFrancisco = "Non";
   if (document.getElementById("location2").checked) {
-      textSanFrancisco = 'Oui';
+    textSanFrancisco = "Oui";
   }
-var textSeattle = 'Non';
+  var textSeattle = "Non";
   if (document.getElementById("location3").checked) {
-      textSeattle = 'Oui';
+    textSeattle = "Oui";
   }
-var textChicago = 'Non';
+  var textChicago = "Non";
   if (document.getElementById("location4").checked) {
-      textChicago = 'Oui';
+    textChicago = "Oui";
   }
-var textBoston = 'Non';
+  var textBoston = "Non";
   if (document.getElementById("location5").checked) {
-      textBoston = 'Oui';
+    textBoston = "Oui";
   }
-var textPortland = 'Non';
+  var textPortland = "Non";
   if (document.getElementById("location6").checked) {
-      textPortland = 'Oui';
+    textPortland = "Oui";
+  }
+  var textcheckbox2 = "Non";
+  if (document.getElementById("checkbox2").checked) {
+    textcheckbox2 = "Oui";
   }
 
+  // Display and Close popup message and modal
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
-  //setTimeout(validate(), 8000);
-  if (popup.classList.contains("show")) {// Check if the popup is shown
+  if (popup.classList.contains("show")) {
+    // Check if the popup is shown
     setTimeout(() => popup.classList.remove("show"), 4000);
-    setTimeout(() => modalbg.style.display = "none", 4000);
-  } // If yes hide it after 10000 milliseconds
+    setTimeout(() => (modalbg.style.display = "none"), 4000);
+  } // If yes hide it after 4000 milliseconds
   return false;
 }
 
-/*
-window.onload = function() {
-   document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      // generate a five digit number for the contact_number variable
-      this.contact_number.value = Math.random() * 100000 | 0;
-      // these IDs from the previous steps
-      emailjs.sendForm('service_fqmxk3h', 'template_zhusj29', this)
-          .then(function() {
-              console.log('SUCCESS!');
-          }, function(error) {
-              console.log('FAILED...', error);
-          });
-  });
-} */
 
-/*var checks = document.querySelectorAll(".checkbox-input");
-
-for (var i = 0; i < checks.length; i++)
-  checks[i].onclick = selectiveCheck;
-function selectiveCheck (event) {
-  var checkedChecks = document.querySelectorAll(".checkbox-input:checked");
-  var quantity = parseInt(document.getElementById("quantity").value);
-  if (checkedChecks.length >= quantity + 2)
-    return false;
-  /*setCustomValidity('Vous devez entrer votre date de naissance.');
-}*/
